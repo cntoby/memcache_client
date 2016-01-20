@@ -181,6 +181,7 @@ func exec(c string) (ret string, n int, err error) {
 func GetInput(addr string) (string, error) {
 	prpt := fmt.Sprintf("(%s) > ", addr)
 	rl, err := readline.NewEx(&readline.Config{Prompt: prpt, HistoryFile: "/tmp/mem_cli_history.tmp"})
+	defer rl.Close()
 	if err != nil {
 		return "", err
 	}
