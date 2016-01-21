@@ -53,7 +53,7 @@ func Del(k ...string) interface{} {
 	if len(k) < 1 {
 		return false
 	}
-	cmd := "del " + k[0]
+	cmd := "delete " + k[0]
 	exec(cmd)
 	return true
 }
